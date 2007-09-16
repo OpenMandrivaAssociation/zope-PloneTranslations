@@ -1,26 +1,25 @@
-%define product		PloneTranslations
-%define ver		2.6.1
-%define rel		1
+%define Product PloneTranslations
+%define product plonetranslations
+%define name    zope-%{Product}
+%define version 3.0.5
+%define release %mkrel 1
 
 %define zope_minver	2.7
-
 %define zope_home	%{_prefix}/lib/zope
 %define software_home	%{zope_home}/lib/python
 
-
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
 Summary:	PloneTranslations contains recent i18n files (*.po) for Plone
-Name:		zope-%{product}
-Version:	%{ver}
-Release:	%mkrel %{rel}
 License:	GPL
 Group:		System/Servers
-Source:		http://plone.org/products/plonetranslations/releases/%{version}/PloneTranslations-%{version}.tar.bz2
-URL:		http://plone.org/products/plonetranslations
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:	noarch
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
 Requires:	zope >= %{zope_minver}
 Requires:	zope-Archetypes
-
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 PloneTranslations contains recent i18n files (*.po) for Plone.
@@ -56,9 +55,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(-, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-
-
-
