@@ -1,7 +1,7 @@
 %define Product PloneTranslations
 %define product plonetranslations
 %define name    zope-%{Product}
-%define version 3.0.5
+%define version 3.0.9
 %define release %mkrel 1
 
 %define zope_minver	2.7
@@ -14,17 +14,17 @@ Release:	%{release}
 Summary:	PloneTranslations contains recent i18n files (*.po) for Plone
 License:	GPL
 Group:		System/Servers
-URL:        http://plone.org/products/%{product}
-Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
+URL:		http://plone.org/products/%{product}
+Source:		http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
 Requires:	zope >= %{zope_minver}
 Requires:	zope-Archetypes
-BuildArch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 PloneTranslations contains recent i18n files (*.po) for Plone.
-Starting with Plone 2.1, PloneTranslations will ship as own 
-Product (but still included in Plone, of course).
+Starting with Plone 2.1, PloneTranslations will ship as own Product
+(but still included in Plone, of course).
 
 %prep
 %setup -c -q
